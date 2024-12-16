@@ -4,7 +4,21 @@
 
 > For those with both a CPU and GPU that support OpenCL, please ensure you select the GPU to run the program (use the `--select-device` parameter)!
 
-## Installation
+## Run on Nosana Network
+Directly run this job on a GPU on the Nosana Network:
+1. Fill in your preferred prefix in the Nosana Job Definition file: `nosana-generate-key.json`
+
+2. Depending on your prefix length, pick a suitable GPU from the market list. For a prefix of 6 characters, we recommend a heavier GPU, like the a100 or the h100.
+```
+npx @nosana/cli market list
+```
+
+3. Post your job and wait for the results
+```
+npx @nosana/cli job post -f nosana-generate-key.json -m nvidia-h100 --wait
+```
+
+## Manual Installation
 
 ```bash
 $ python3 -m pip install -r requirements.txt

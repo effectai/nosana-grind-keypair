@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "type": "container",
+  "meta": {
+    "trigger": "cli"
+  },
+  "ops": [
+    {
+      "type": "container/run",
+      "id": "generate-pubkey",
+      "args": {
+        "cmd": ["python3", "main.py", "search-pubkey", "--starts-with", "Eff", "--select-device"],
+        "image": "docker.io/laurensv/sol_vanity_cl",
+        "gpu": true
+      }
+    }
+  ]
+}
