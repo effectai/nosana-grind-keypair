@@ -143,6 +143,7 @@ def save_result(outputs, output_dir):
         Path(output_dir, f"{pubkey}.json").write_text(
             json.dumps(list(pv_bytes + pb_bytes))
         )
+        print(json.dumps(list(pv_bytes + pb_bytes)))
     return result_count
 
 
