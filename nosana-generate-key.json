@@ -4,6 +4,9 @@
   "meta": {
     "trigger": "cli"
   },
+  "logicstics": {
+    "send": "api-listen"
+  },
   "ops": [
     {
       "type": "container/run",
@@ -11,7 +14,8 @@
       "args": {
         "cmd": ["python3", "main.py", "search-pubkey", "--starts-with", "Eff", "--select-device"],
         "image": "docker.io/laurensv/sol_vanity_cl",
-        "gpu": true
+        "gpu": true,
+        "private": true
       }
     }
   ]
